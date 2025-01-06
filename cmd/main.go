@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/francky-d/go-forum/internal/utils"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	fmt.Println(utils.BaseDir())
 }
