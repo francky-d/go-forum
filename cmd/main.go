@@ -1,7 +1,7 @@
 package main
 
-import "github.com/francky-d/go-forum/internal/utils"
+import "github.com/francky-d/go-forum/internal/utils/helpers"
 
 func main() {
-	utils.RenderViewToStdout("home.gohtml", nil)
+	helpers.RenderViewToStdout("home.gohtml", nil)
 }
