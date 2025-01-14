@@ -35,16 +35,16 @@ func ViewsPath() string {
 // RenderView render a view to every element satisfying io.Writer
 func RenderView(viewName string, data interface{}, output io.Writer) {
 
-	viewTemplateFile := filepath.Join(ViewsPath(), viewName+".gohtml")
+	viewTemplateFile := filepath.Join(ViewsPath(), viewName+".go.html")
 
 	if FileDoesNotExists(viewTemplateFile) {
 		log.Panicf("%s view template file not exists", viewName)
 	}
 
-	cssTemplatePath := filepath.Join(TemplatesPath(), "css.gohtml")
-	jsTemplateFile := filepath.Join(TemplatesPath(), "js.gohtml")
-	menuTemplateFile := filepath.Join(TemplatesPath(), "menu.gohtml")
-	layoutTemplateFile := filepath.Join(TemplatesPath(), "layout.gohtml")
+	cssTemplatePath := filepath.Join(TemplatesPath(), "css.go.html")
+	jsTemplateFile := filepath.Join(TemplatesPath(), "js.go.html")
+	menuTemplateFile := filepath.Join(TemplatesPath(), "menu.go.html")
+	layoutTemplateFile := filepath.Join(TemplatesPath(), "layout.go.html")
 	viewTemplate, err := template.ParseFiles(layoutTemplateFile, cssTemplatePath, jsTemplateFile, menuTemplateFile, viewTemplateFile)
 
 	PanicOnError(err)
